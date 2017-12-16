@@ -1,0 +1,280 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="__STATIC__/app/css/reset.css">
+		<link rel="stylesheet" href="__STATIC__/app/fonts/iconfont.css">
+		<script type="text/javascript" src="__STATIC__/js/TouchSlide.1.1.js"></script>
+		<style type="text/css">
+			.home-content {
+				margin-top: 44px;
+			}
+			/*轮播图*/
+			.slide {
+				width: 100%;
+				height: 208px;
+				position: relative;
+				overflow: hidden;
+			}
+			.slide .hd {
+				width: 100%;
+				position: absolute;
+				z-index: 1;
+				bottom: 13px;
+				text-align:center;
+			}
+			.slide .hd ul {
+				font-size:0;
+			}
+			.slide .hd ul li{
+				display:inline-block;
+				width: 56px;
+				height: 2px;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+				background: #f2f2f2;
+				margin: 0 2px;
+				vertical-align: middle;
+				overflow: hidden;
+			}
+			.slide .hd ul li.on {
+				background: #00cccb;
+			}
+			.slide .bd {
+				position:relative;
+				z-index: 0;
+			}
+			.slide .bd li img {
+				width: 100%;
+				height: 208px;
+			}
+			.slide .bd li a {
+				-webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */
+			}
+
+			.home-buttons {
+				padding-top: 19px;
+				background-color: #FFFFFF;
+			}
+			
+			.home-buttons .button {
+				float: left;
+				width: 20%;
+				margin-left: 4%;
+				margin-bottom: 20px;
+			}
+			.home-buttons > .button > .button-img {
+				width: 46px;
+				height: 46px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.home-buttons > .button > .button-img > img {
+				max-width: 100%;
+				height: auto;
+			}
+			
+			.home-buttons > .button >  .button-name {
+				font-size: 13px;
+				color: #333333;
+				height: 13px;
+				line-height: 1;
+				text-align: center;
+				margin-top: 10px;
+			}
+			.home-serve {
+				margin-top: 6px;
+				background-color: #FFFFFF;
+			}
+			
+			.home-serve .serve-name {
+				height: 35px;
+				line-height: 35px;
+				font-size: 15px;
+				color: #333333;
+				text-align: center;
+				position: relative;
+				border-bottom: 1px solid #f2f2f2;
+			}
+			
+			.home-serve .serve-name:before {
+				content: '';
+				position: absolute;
+				width: 9px;
+				height: 18px;
+				border-radius: 0 9px 9px 0;
+				z-index: 10;
+				left: 0;
+				top: 26px;
+				background-color: #f2f2f2;
+			}
+			
+			.home-serve .serve-name:after {
+				content: '';
+				position: absolute;
+				width: 9px;
+				height: 18px;
+				border-radius: 9px 0 0 9px;
+				z-index: 10;
+				right: 0;
+				top: 26px;
+				background-color: #f2f2f2;
+			}
+			.home-serve .serve-example {
+				width: 92%;
+				padding: 10px 0 34px 0;
+				margin: 0 auto;
+			}
+			.home-serve .serve-example > p {
+				float: left;
+				vertical-align: middle;
+			}
+			.home-serve .serve-example > p.example-item {
+				width: 20.2%;
+			}
+			.home-serve .serve-example > p.example-item > span {
+				text-align: center;
+				display: block;
+			}
+			.home-serve .serve-example > p.example-item > span.iconfont {
+				height: 25px;
+				font-size: 25px;
+				line-height: 25px;
+				color: #333333;
+			}
+			.home-serve .serve-example > p.example-item > span.title {
+				height: 12px;
+				font-size: 12px;
+				line-height: 12px;
+				margin-top: 8px;
+				color: #333333;
+			}
+			.home-serve .serve-example > p.iconfont {
+				width: 6.4%;
+				height: 45px;
+				font-size: 16px;
+				line-height: 45px;
+				font-weight: bolder;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="app-header">
+			<p class="header-title">华之珍宝</p>
+		</header>
+		<div class="home-content">
+			<!--轮播图--S-->
+			<div id="homeSlide" class="slide">
+				<div class="hd">
+					<ul></ul>
+				</div>
+				<div class="bd">
+					<ul>
+						<!-- <li><a href="#"><img src="../images/tb1.jpg" /></a></li>
+						<li><a href="#"><img src="../images/tb2.jpg" /></a></li>
+						<li><a href="#"><img src="../images/tb3.jpg" /></a></li> -->
+						<adv pid ="51317" limit="5" item="v">
+							<li><a href="{$v.ad_link}" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="{$v[ad_code]}" title="{$v[title]}"width="100%" style="{$v[style]}"/></a></li>
+						</adv> 
+					</ul>
+				</div>
+			</div>
+			<!--轮播图--E-->
+			<!--列表按钮--S-->
+			<div class="home-buttons clearfix" id="home-orderList">
+				<volist name="category" id="v">
+				<div class="button" name="{$v.id}">
+					<p class="button-img"><img src="{$v.image}" /></p>
+					<p class="button-name">{$v.name}</p>
+				</div>
+				<!-- <div class="button" name="服务说明">
+						<p class="button-img"><img src="__STATIC__/app/img/home-button1.jpg" /></p>
+						<p class="button-name">服务说明</p>
+					</div> -->
+				<!-- <div class="button" name="消化系统">
+					<p class="button-img"><img src="__STATIC__/app/img/home-button2.jpg" /></p>
+					<p class="button-name">消化系统</p>
+				</div>
+				<div class="button" name="循环系统">
+					<p class="button-img"><img src="__STATIC__/app/img/home-button3.jpg" /></p>
+					<p class="button-name">循环系统</p>
+				</div>
+				<div class="button" name="血液系统">
+					<p class="button-img"><img src="__STATIC__/app/img/home-button4.jpg" /></p>
+					<p class="button-name">血液系统</p>
+				</div>
+				<div class="button" name="风湿系统">
+					<p class="button-img"><img src="__STATIC__/app/img/home-button5.jpg" /></p>
+					<p class="button-name">风湿系统</p>
+				</div>
+				<div class="button" name="理化系统">
+					<p class="button-img"><img src="__STATIC__/app/img/home-button6.jpg" /></p>
+					<p class="button-name">理化系统</p>
+				</div>
+				<div class="button" name="传染病">
+					<p class="button-img"><img src="__STATIC__/app/img/home-button7.jpg" /></p>
+					<p class="button-name">传染病</p>
+				</div>
+				<div class="button" name="更多">
+					<p class="button-img"><img src="__STATIC__/app/img/home-button8.jpg" /></p>
+					<p class="button-name">更多</p>
+				</div> -->
+				</volist>
+			</div>
+			<!--列表按钮--E-->
+			<!--服务说明--S-->
+			<div class="home-serve">
+				<p class="serve-name">服务说明</p>
+				<div class="serve-example clearfix">
+					<p class="example-item">
+					<span class="iconfont icon-gouwuche"></span>
+					<span class="title">挑选服务</span>
+					</p>
+					<p class="iconfont icon-arrow-right"></p>
+					<p class="example-item">
+						<span class="iconfont icon-xinxi"></span>
+						<span class="title">填写信息</span>
+					</p>
+					<p class="iconfont icon-arrow-right"></p>
+					<p class="example-item">
+						<span class="iconfont icon-zan"></span>
+						<span class="title">核对信息</span>
+					</p>
+					<p class="iconfont icon-arrow-right"></p>
+					<p class="example-item">
+						<span class="iconfont icon-zhifu"></span>
+						<span class="title">支付</span>
+					</p>
+				</div>
+			</div>
+			<!--服务说明--E-->
+			<include file="Public/footer_nav"/>
+		</div>
+		<script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+		<script>
+      $(function(){
+        // 轮播图
+        TouchSlide({
+          slideCell:"#homeSlide",
+          titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+          mainCell:".bd ul",
+          effect:"leftLoop",
+          autoPlay:true,//自动播放
+          autoPage:true //自动分页
+        })
+				// 列表按钮点击
+				$("#home-orderList").children(".button").on('click', function (e) {
+					var name = $(this).attr("name")
+					window.location.href = "order/id/"+name;
+        })
+      })
+
+
+		</script>
+	</body>
+
+</html>

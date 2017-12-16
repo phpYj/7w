@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="__STATIC__/app/css/reset.css">
+		<link rel="stylesheet" href="__STATIC__/app/fonts/iconfont.css">
+		<style>
+			.order-content {
+				position: relative;
+				left: 0;
+				top: 44px;
+			}
+			.order-search {
+				position: fixed;
+				top: 44px;
+				left: 0;
+				z-index: 10;
+				width: 100%;
+				padding: 7px 6%;
+				box-sizing: border-box;
+				background-color: #FFFFFF;
+			}
+
+			.order-search > input {
+				width: 100%;
+				height: 31px;
+				line-height: 31px;
+				padding-left: 20px;
+				box-sizing: border-box;
+				border-radius: 31px;
+				background-color: #F2F2F2;
+			}
+			.order-search >.search-label {
+				position: absolute;
+				left: 50%;
+				top: 7px;
+				font-size: 14px;
+				width: 100%;
+				height: 31px;
+				line-height: 31px;
+				color: #c7c7c7;
+				transform: translateX(-50%);
+				text-align: center;
+			}
+			.order-search>.search-label > .iconfont {
+				font-size: 15px;
+				margin-right: 5px;
+				vertical-align: middle;
+			}
+			.order-img {
+				width: 100%;
+				height: 139px;
+				margin-top: 45px;
+			}
+			
+			.order-img > img {
+				width: 100%;
+				height: 139px;
+			}
+			
+			.order-list {
+				margin-top: 7px;
+			}
+			
+			.order-list > .list-item {
+				width: 100%;
+				padding: 12px 22px 8px 22px;
+				box-sizing: border-box;
+				background-color: #FFFFFF;
+				border-bottom: 1px solid #D7D7D7;
+			}
+			
+			.order-list>.list-item>.item-wrap {
+				position: relative;
+			}
+			
+			.order-list .item-wrap>.item-img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 129px;
+				height: 89px;
+			}
+			
+			.order-list .item-wrap> .item-img > img {
+				max-width: 100%;
+				height: auto;
+			}
+			
+			.order-list .item-wrap > .item-detail {
+				margin-left: 139px;
+				font-size: 0;
+				color: #333333;
+			}
+			
+			.order-list .item-wrap > .item-detail .name {
+				font-size: 14px;
+				height: 16px;
+				line-height: 16px;
+			}
+			
+			.order-list .item-wrap>.item-detail .iconfont {
+				font-size: 14px;
+				color: #D7D7D7 !important;
+			}
+			
+			.order-list .item-wrap>.item-detail>.detail-introduce {
+				font-size: 13px;
+				height: 42px;
+				line-height: 13px;
+				margin-top: 8px;
+				color: #D7D7D7 !important;
+			}
+			
+			.order-list .item-wrap>.item-detail>.detail-number {
+				height: 23px;
+				line-height: 23px;
+				margin-top: 8px;
+				font-size: 0;
+			}
+			
+			.order-list .item-wrap>.item-detail>.detail-number>.number {
+				font-size: 13px;
+				text-align: left;
+				color: #ff7f66;
+			}
+			
+			.order-list .item-wrap>.item-detail>.detail-number>.button {
+				width: 74px;
+				text-align: center;
+				font-size: 13px;
+				color: #FFFFFF;
+				background-color: #ff7f66;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="app-header">
+			<p class="header-title">华之珍宝</p>
+		</header>
+		<div class="order-content">
+			<div class="order-search">
+				<label for="search" class="search-label"><i class="iconfont icon-sousuo"></i>搜索服务，共2032项服务</label>
+				<input type="text" id="search" />
+			</div>
+			<div class="order-img">
+				<img src="__STATIC__/app/img/order-ad.jpg" />
+			</div>
+			<div class="order-list" id="order_list">
+			   <volist name="goods" id="v">	
+				<div class="list-item" name="{$v.goods_id}">
+					<div class="item-wrap">
+						<div class="item-img">
+							<img src="{$v.original_img}" />
+						</div>
+						<div class="item-detail">
+							<p class="detail-title clearfix">
+								<span class="name pull-left">{$v.goods_name}</span>
+								<span class="iconfont icon-arrow-right pull-right"></span>
+							</p>
+							<p class="detail-introduce">{$v.goods_remark}</p>
+							<p class="detail-number mui-clearfix">
+									<!-- <span class="number pull-left">已服务2886次</span> -->
+							<span class="button pull-right"><a href="#" style="color:white">预约服务</a></span></p>
+						</div>
+					</div>
+				</div>
+				</volist>
+				<!-- <div class="list-item">
+					<div class="item-wrap">
+						<div class="item-img">
+							<img src="__STATIC__/app/img/orderList.jpg" />
+						</div>
+						<div class="item-detail">
+							<p class="detail-title clearfix">
+								<span class="name pull-left">传统小艾灸</span>
+								<span class="iconfont icon-arrow-right"></span>
+							</p>
+							<p class="detail-introduce">艾灸产生于中国远古时代，因为它 的作用机理和针疗针疗有相近之处 针疗针疗针疗....</p>
+							<p class="detail-number clearfix"><span class="number pull-left">已服务2886次</span><span class="button pull-right">预约服务</span></p>
+						</div>
+					</div>
+				</div> -->
+			</div>
+			<include file="Public/footer_nav"/>
+		</div>
+		<script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+		<script type="text/javascript">
+      $(function(){
+        //	搜索框
+        $(".order-search").on("input", function() {
+          var v = $(this).find('input').val()
+          if (v == null ||v == "") {
+            $(this).find('label').css("display", "block")
+          } else {
+            $(this).find('label').css("display", "none")
+          }
+        }).trigger("input")
+        // 列表点击
+        $("#order_list").children(".list-item").on('click', function (e) {
+			var name = $(this).attr("name")
+         	 window.location.href = "/index.php/Mobile/Home/orderdetail/id/"+name;
+        })
+			})
+
+		</script>
+	</body>
+
+</html>

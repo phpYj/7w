@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../Static/app/css/reset.css">
+		<link rel="stylesheet" href="../Static/app/fonts/iconfont.css">
+		<style type="text/css">
+			.wallet-wrap {
+				margin: 56px 10px 0 10px;
+				padding-top: 51px;
+				border-radius: 4px;
+				background-color: #FFFFFF;
+				position: relative;
+			}
+			.wallet-wrap > .wrap-head {
+				width: 65px;
+				height: 65px;
+				overflow: hidden;
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				top: -33px;
+				z-index: 10;
+				transform: translateX(-50%);
+			}
+			.wallet-wrap > .wallet-code {
+				width: 210px;
+				height: 210px;
+				margin: 0 auto;
+				background-color: red;
+			}
+			.wallet-wrap > .wallet-code > img {
+				width: 210px;
+				height: 210px;
+			}
+			.wallet-wrap > .wallet-title {
+				margin: 16px 0 26px 0;
+				font-size: 12px;
+				height: 12px;
+				line-height: 12px;
+				text-align: center;
+			}
+			.wallet-wrap > .line {
+				height: 0;
+				position: relative;
+				border-bottom: 1px dashed #cfa972;
+			}
+			.wallet-wrap > .line:before {
+				content: '';
+				position: absolute;
+				width: 9px;
+				height: 18px;
+				border-radius: 0 9px 9px 0;
+				z-index: 10;
+				left: 0;
+				top: -9px;
+				background-color: #f2f2f2;
+			}
+			
+			.wallet-wrap > .line:after {
+				content: '';
+				position: absolute;
+				width: 9px;
+				height: 18px;
+				border-radius: 9px 0 0 9px;
+				z-index: 10;
+				right: 0;
+				top: -9px;
+				background-color: #f2f2f2;
+			}
+			.wallet-wrap > .wallet-pay {
+				padding: 33px 13% 45% 13%;
+				box-sizing: border-box;
+			}
+			.wallet-wrap > .wallet-pay > .pay {
+				text-align: center;
+				color: #333333;
+				font-size: 13px;
+			}
+			.wallet-wrap > .wallet-pay > .pay > .pay-img {
+				width: 58px;
+				height: 58px;
+				margin: 0 auto;
+			}
+			.wallet-wrap > .wallet-pay > .pay  img {
+				width: 58px;
+				height: 58px;
+			}
+			.wallet-wrap > .wallet-pay > .pay  .pay-name {
+				height: 13px;
+				line-height: 13px;
+				margin-top: 14px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="wallet-content">
+			<div class="wallet-wrap">
+				<p class="wrap-head">
+					<img src="../static/app/img/wallet-head.jpg" />
+				</p>
+				<p class="wallet-code">
+					<img src="../static/app/img/wallet-code.jpg" />
+				</p>
+				<p class="wallet-title">请在付款时出示此二维码</p>
+				<p class="line"></p>
+				<div class="wallet-pay clearfix">
+					<div class="pay pull-left">
+						<p class="pay-img"><img src="../static/app/img/wallet-zhi.jpg" /></p>
+						<p class="pay-name">去支付宝支付</p>
+					</div>
+					<div class="pay pull-right">
+						<p class="pay-img"><img src="../static/app/img/wallet-wei.jpg" /><p>
+						<p class="pay-name">去微信支付</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

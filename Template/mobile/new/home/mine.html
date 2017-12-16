@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../Static/app/css/reset.css">
+		<link rel="stylesheet" href="../Static/app/fonts/iconfont.css">
+		<style type="text/css">
+			.mine-content {
+				margin-top: 44px;
+			}
+			.mine-header {
+				width: 100%;
+				padding: 39px 33px 43px 16px;
+				box-sizing: border-box;
+				background-color: #000000;
+			}
+			
+			.mine-header > .header-img {
+				width: 63px;
+				height: 63px;
+				border-radius: 50%;
+				overflow: hidden;
+				background-color: red;
+			}
+			
+			.mine-header>.header-img > img {
+				width: 63px;
+				height: 63px;
+			}
+			
+			.mine-header > .header-name {
+				margin-left: 12px;
+			}
+			
+			.mine-header>.header-name >.title {
+				height: 21px;
+				line-height: 21px;
+				font-size: 21px;
+				color: #FFFFFF;
+				margin-top: 15px;
+			}
+			
+			.mine-header>.header-name > .marks {
+				font-size: 0;
+				margin-top: 5px;
+			}
+			
+			.mine-header>.header-name>.marks>span {
+				display: inline-block;
+				width: 18px;
+				height: 18px;
+				border-radius: 0 0 9px 9px;
+			}
+			
+			.mine-header>.header-name>.marks>span:nth-child(1) {
+				background-color: #FF635B;
+			}
+			
+			.mine-header>.header-name>.marks>span:nth-child(2) {
+				background-color: #FDD23C;
+			}
+			
+			.mine-header>.header-name>.marks>span:nth-child(3) {
+				background-color: #478DFE;
+			}
+			
+			.mine-header>.header-name>.marks>span:nth-child(4) {
+				background-color: #DA3ECA;
+			}
+			
+			.mine-header>.header-name>.marks > span + span {
+				margin-left: 5px;
+			}
+			
+			.mine-header>.header-code {
+				font-size: 0;
+				height: 44px;
+				line-height: 44px;
+				padding-top: 14px;
+			}
+			
+			.mine-header>.header-code> span {
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			.mine-header>.header-code > span.img {
+				width: 44px;
+				height: 44px;;
+			}
+			
+			.mine-header>.header-code>span.img>img {
+				width: 44px;
+				height: 44px;
+			}
+			
+			.mine-header>.header-code > .iconfont {
+				font-size: 17px;
+				height: 44px;
+				line-height: 44px;
+				margin-left: 17px;
+				color: #CCCCCC;
+			}
+			/*订单*/
+			
+			.mine-order {
+				padding: 0 17px;
+				box-sizing: border-box;
+				background-color: #FFFFFF;
+			}
+			
+			.mine-order > .order-header {
+				height: 38px;
+				line-height: 38px;
+				border-bottom: 1px solid #D7D7D7;
+			}
+			
+			.mine-order>.order-header>.title {
+				font-size: 13px;
+				color: #333333;
+			}
+			
+			.mine-order>.order-header>.more {
+				text-align: right;
+				font-size: 13px;
+				color: #CCCCCC;
+			}
+			
+			.mine-order>.order-header>.more>.iconfont {
+				font-size: 17px;
+			}
+			
+			.mine-order>.order-buttons {
+				padding: 20px 0;
+			}
+			
+			.mine-order>.order-buttons>.button {
+				float: left;
+				width: 16%;
+				color: #333333;
+				text-align: center;
+			}
+			
+			.mine-order>.order-buttons>.button>span {
+				display: block;
+			}
+			
+			.mine-order>.order-buttons>.button>.iconfont {
+				font-size: 30px;
+			}
+			
+			.mine-order>.order-buttons>.button>.name {
+				margin-top: 10px;
+				font-size: 12px;
+			}
+			
+			.mine-order>.order-buttons>.button+.button {
+				margin-left: 5%;
+			}
+			/*操作列表*/
+			
+			.mine-list {
+				margin-top: 5px;
+			}
+			
+			.mine-list .item {
+				padding: 0 20px 0 16px;
+				box-sizing: border-box;
+				background-color: #FFFFFF;
+			}
+			.mine-list .item > .item-wrap {
+				width: 100%;
+				height: 70px;
+				font-size: 0;
+			}
+			.mine-list .item > .line-wrap {
+				color: #333333;
+				border-bottom: 1px solid #D7D7D7 !important;
+			}
+			.mine-list .item-wrap > .item-img {
+				width: 45px;
+				height: 45px;
+				margin-top: 13px;
+			}
+			
+			.mine-list .item-wrap> .item-img > img {
+				width: 45px;
+				height: 45px;
+			}
+			
+			.mine-list .item-wrap > .item-title {
+				font-size: 16px;
+				color: #333333;
+				line-height: 70px;
+				margin-left: 16px;
+			}
+			
+			.mine-list .item-wrap > .item-icon {
+				font-size: 17px;
+				color: #CCCCCC;
+				line-height: 70px;
+			}
+		</style>
+	</head>
+	<body>
+	<header class="app-header">
+		<p class="header-title">华之珍宝</p>
+	</header>
+		<div class="mine-content">
+			<div class="mine-header clearfix">
+				<div class="header-img pull-left">
+					<img src="" />
+				</div>
+				<div class="header-name pull-left">
+					<p class="title">hello word</p>
+					<p class="marks">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</p>
+				</div>
+				<div class="header-code pull-right">
+					<span class="img"><img src="../static/app/img/mine-code.jpg"/></span>
+					<span class="iconfont icon-arrow-right"></span>
+				</div>
+			</div>
+			<div class="mine-order">
+				<div class="order-header clearfix">
+					<p class="title pull-left">我的订单</p>
+					<p class="more pull-right">查看全部<span class="iconfont icon-arrow-right"></span></p>
+				</div>
+				<div class="order-buttons clearfix">
+					<p class="button">
+						<span class="iconfont icon-qianbao"></span>
+						<span class="name">代付款</span>
+					</p>
+					<p class="button">
+						<span class="iconfont icon-hezi101"></span>
+						<span class="name">代发货</span>
+					</p>
+					<p class="button">
+						<span class="iconfont icon-huocheicon-copy"></span>
+						<span class="name">待收货</span>
+					</p>
+					<p class="button">
+						<span class="iconfont icon-zan1"></span>
+						<span class="name">待评价</span>
+					</p>
+					<p class="button">
+						<span class="iconfont icon-shouhou"></span>
+						<span class="name">售后</span>
+					</p>
+				</div>
+			</div>
+			<div class="mine-list">
+				<ul id="mine-list">
+					<li class="item">
+						<p class="item-wrap line-wrap clearfix">
+							<span class="item-img pull-left"><img src="../static/app/img/mine1.jpg"></span>
+							<span class="item-title pull-left">绑定银行卡</span>
+							<span class="item-icon iconfont icon-arrow-right pull-right"></span>
+						</p>
+					</li>
+					<li class="item" name="wallet">
+						<p class="item-wrap line-wrap clearfix">
+							<span class="item-img pull-left"><img src="../static/app/img/mine2.jpg"></span>
+							<span class="item-title pull-left">我的余额</span>
+							<span class="item-icon iconfont icon-arrow-right pull-right"></span>
+						</p>
+					</li>
+					<li class="item">
+						<p class="item-wrap clearfix">
+							<span class="item-img pull-left"><img src="../static/app/img/mine3.jpg"></span>
+							<span class="item-title pull-left">地址管理</span>
+							<span class="item-icon iconfont icon-arrow-right pull-right"></span>
+						</p>
+					</li>
+					<li class="item" style="margin-top: 5px;">
+						<p class="item-wrap clearfix">
+							<span class="item-img pull-left"><img src="../static/app/img/mine4.jpg"></span>
+							<span class="item-title pull-left">我的团队</span>
+							<span class="item-icon iconfont icon-arrow-right pull-right"></span>
+						</p>
+					</li>
+				</ul>
+			</div>
+			<include file="../Public/footer_nav"/>
+		</div>
+		<script type="text/javascript" src="../Static/js/jquery.js"></script>
+		<script type="text/javascript">
+		</script>
+	</body>
+
+</html>

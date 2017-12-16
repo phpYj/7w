@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="lib/flexible_css.js"></script>
+		<script type="text/javascript" src="lib/flexible.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style type="text/css">
+			.login-wrap {
+				width: 100%;
+				padding: 1.5733rem 1.3333rem 1.8rem 1.3333rem;
+				box-sizing: border-box;
+				background-color: #FFFFFF;
+			}
+			.login-wrap > .login-wrap-header  > .head-img {
+				width: 1.7333rem;
+				height: 1.7333rem;
+				text-align: center;
+				margin: 0 auto;
+				border-radius: 50%;
+				overflow: hidden;
+				background-color: red;
+			}
+			.login-wrap > .login-wrap-header  > .head-img > img {
+				max-width: 100%;
+				height: auto;
+			}
+			.login-wrap > .login-wrap-header  > .head-title {
+				font-size: 14px;
+				height: 14px;
+				line-height: 14px;
+				margin-top: 0.7333rem;
+				text-align: center;
+				color: #333333;
+			}
+			.login-wrap > .login-input {
+				margin-top: 2.2666rem;
+			}
+			.login-wrap > .login-input > .name-input {
+				font-size: 13px;
+				color: #333333;
+				position: relative;
+			}
+			.login-wrap > .login-input > .name-input  > input {
+				height: 34px;
+				line-height: 34px;
+				margin-bottom: 0;
+				padding: 0 70px 0 40px;
+				border-radius: 0;
+				border: 0 solid #FFFFFF;
+				border-bottom: 1px solid #D7D7D7;
+			}
+			.login-wrap > .login-input > .name-input > span.head {
+				position: absolute;
+				left: 0;
+				top: 11px;
+				height: 13px;
+				line-height: 13px;
+				padding-right: 10px;
+				border-right: 1px solid #D7D7D7;
+			}
+			.login-wrap > .login-input > .name-input > span.button {
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-align: right;
+				height: 34px;
+				line-height: 34px;
+			}
+			.login-wrap > .login-input > .pwd-input {
+				margin-top: 0.2666rem;
+			}
+			.login-wrap > .login-input > .pwd-input > input {
+				height: 34px;
+				line-height: 34px;
+				margin-bottom: 0;
+				padding: 0;
+				border-radius: 0;
+				border: 0 solid #FFFFFF;
+				border-bottom: 1px solid #D7D7D7;
+			}
+			.login-wrap > .login-input > .protocol {
+				margin-top: 0.3066rem;
+				  font-size: 13px;
+				  height: 13px;
+				  line-height: 1;
+				  text-align: center;
+				  color: #a8979a;
+			}
+			.login-wrap > .login-input > .protocol > span {
+				  color: #0debff;
+			}
+			.login-wrap > .login-input > .login-button {
+				  width: 207px;
+				  height: 42px;
+		          margin: 1.4266rem auto 0;
+				  border-radius: 22px;
+				  border: 1px solid #F61E1F;
+				  background-color: #FFFFFF;
+			}
+			.login-wrap > .login-input > .login-button > p {
+				  display: block;
+				  height: 40px;
+				  line-height: 40px;
+				  color: #FFFFFF;
+				  font-size: 17px;
+				  text-align: center;
+				  background-color: #F61E1F;
+			      border-radius: 20px;
+			      border: 2px solid #FFFFFF;
+			      box-sizing: border-box;
+			}
+			.login-wrap > .login-other {
+				margin-top: 1.56rem;
+			}
+			.login-wrap > .login-other > .other-line {
+				position: relative;
+				height: 0;
+				border-bottom: 1px dashed #cfa972;
+			}
+			.login-wrap > .login-other > .other-line > .title {
+				position: absolute;
+				left: 50%;
+				top: -6px;
+				font-size: 13px;
+				height: 13px;
+				line-height: 13px;
+				padding: 0 10px;
+				transform: translateX(-50%);
+				background-color: #FFFFFF;
+			}
+			.login-wrap > .login-other > .other-img {
+				width: 230px;
+				margin: 1.1733rem auto 0;
+			}
+			.login-wrap > .login-other > .other-img > span {
+				display: block;
+				float: left;
+				width: 33px;
+				height: 33px;
+			}
+			.login-wrap > .login-other > .other-img > span + span {
+				margin-left: 14px;
+			}
+			.login-wrap > .login-other > .other-img > span > img {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="login-wrap"> 
+				<div class="login-wrap-header">
+					<p class="head-img"><img src="img/article-head.jpg" alt="" /></p>
+					<p class="head-title">华之珍宝，深谙华夏文化之精髓</p>
+				</div>
+				<div class="login-input">
+					<p class="name-input">
+						<span class="head">+86</span>
+						<input type="text" placeholder="手机"/>
+						<span class="button">获取验证码</span>
+					</p>
+					<p class="pwd-input"><input type="password" placeholder="密码"/></p>
+					<p class="protocol">登陆即表示同意<span>《用户使用协议》</span></p>
+					<div class="login-button"><p>登陆</p></div>
+				</div>
+				<div class="login-other">
+					<p class="other-line"><span class="title">社交账号登陆</span></p>
+					<p class="other-img mui-clearfix">
+						<span><img src="img/login-other1.jpg" /></span>
+						<span><img src="img/login-other2.jpg" /></span>
+						<span><img src="img/login-other3.jpg" /></span>
+						<span><img src="img/login-other4.jpg" /></span>
+						<span><img src="img/login-other5.jpg" /></span>
+					</p>
+				</div>
+			</div>
+			
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>
