@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>论坛列表</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="../Static/app/css/reset.css">
+  <link rel="stylesheet" href="../Static/app/fonts/iconfont.css">
+  <style>
+    .room-list > .edit {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      color: #ffffff;
+      font-size: 27px;
+      text-align: center;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #8746ff;
+      right: 22px;
+      bottom: 80px;
+      z-index: 1000;
+    }
+    .room-list > .item {
+      width: 100%;
+      padding: 20px 22px 10px 22px;
+      box-sizing: border-box;
+      margin-top: 8px;
+      background-color: #ffffff;
+    }
+    .room-list > .item > .item-title {
+      height: 14px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      text-align: left;
+      color: #333333;
+    }
+    .room-list > .item > .item-img {
+      display:block;
+      margin-top: 10px;
+      height: 184px;
+    }
+    .room-list > .item > .item-img > img {
+      width: 100%;
+      height: 184px;
+    }
+    .room-list > .item > .item-number {
+      margin-top: 7px;
+      height: 13px;
+      line-height: 13px;
+      font-size: 13px;
+      color: #333333;
+      text-align: left;
+    }
+    .room-list > .item > .item-number > .timer {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<header class="app-header">
+  <a href="javascript:history.go(-1)" class="header-back iconfont icon-arrow-left"></a>
+  <p class="header-title">养生课堂</p>
+</header>
+<div class="app-content">
+  <div class="room-list">
+    <a href="forumPosts.html" class="edit iconfont icon-bianji"></a>
+    <!-- <div class="item">
+      <p class="item-title">该视频出现违规内容</p>
+      <p class="item-img">
+        <img src="__STATIC__/app/img/order-ad.jpg">
+      </p>
+      <p class="item-number clearfix"><span class="people pull-left">1024人观看</span><span class="timer pull-right">2小时前</span></p>
+    </div> -->
+    <volist name="data" id="v">
+      <div class="item">
+        <p class="item-title">{$v.title}</p>
+        <a href="getHealthRoomDetail/id/{$v.id}" class="item-img">
+          <img src="{$v.picture}">
+        </a>
+        <p class="item-number clearfix">
+          <!-- <span class="people pull-left">1024人观看</span> -->
+          <!-- <span class="timer pull-right">2小时前</span></p> -->
+      </div>
+    </volist>
+    <!-- <div class="item">
+      <p class="item-title">该视频出现违规内容</p>
+      <p class="item-img">
+        <img src="__STATIC__/app/img/order-ad.jpg">
+      </p>
+      <p class="item-number clearfix"><span class="people pull-left">1024人观看</span><span class="timer pull-right">2小时前</span></p>
+    </div>
+    <div class="item">
+      <p class="item-title">该视频出现违规内容</p>
+      <p class="item-img">
+        <img src="__STATIC__/app/img/order-ad.jpg">
+      </p>
+      <p class="item-number clearfix"><span class="people pull-left">1024人观看</span><span class="timer pull-right">2小时前</span></p>
+    </div> -->
+  </div>
+
+</div>
+
+</body>
+</html>
