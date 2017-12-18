@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>发布帖子</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="../Static/app/css/reset.css">
+  <link rel="stylesheet" href="../Static/app/fonts/iconfont.css">
+  <style>
+
+    body {
+      background-color: #ffffff;
+    }
+    .posts-wrap {
+      width: 100%;
+      padding: 20px 22px 22px 30px;
+      box-sizing: border-box;
+      font-size: 13px;
+    }
+    .posts-wrap > .wrap-select {
+      width: 100%;
+      height: 44px;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    .posts-wrap > .wrap-select:after{
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      right: 15px;
+      top: 13px;
+      border-width: 0 1px 1px 0;
+      border-color: #333333;
+      border-style: solid;
+      pointer-events: none;
+      transform:rotate(45deg);
+      -ms-transform:rotate(45deg); 	/* IE 9 */
+      -moz-transform:rotate(45deg); 	/* Firefox */
+      -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+      -o-transform:rotate(45deg);
+    }
+    .posts-wrap > .wrap-select > select{
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 44px;
+      line-height: 44px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      padding-left: 8px;
+      background-color: #f2f2f2;
+    }
+
+    .wrap-title {
+      margin-top: 7px;
+      width: 100%;
+      height: 44px;
+      border-radius: 5px;
+      margin-top: 7px;
+      overflow: hidden;
+      background-color: #f2f2f2;
+    }
+    .wrap-title > input {
+      width: 100%;
+      height: 44px;
+      line-height: 44px;
+      padding-left: 8px;
+      background-color: #f2f2f2;
+    }
+    .wrap-title > input::-webkit-input-placeholder {
+      color: #333333;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .wrap-content {
+      width: 100%;
+      margin-top: 7px;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+    .wrap-content > textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      outline:none;
+      resize:none;
+      padding: 15px 10px 0;
+      background-color: #f2f2f2;
+    }
+    .wrap-content > textarea::-webkit-input-placeholder {
+      color: #333333;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .wrap-upload {
+      margin-top: 11px;
+    }
+    .wrap-upload > .upload-btn {
+      width: 52px;
+      height: 52px;
+      line-height: 52px;
+      border-radius: 5px;
+      background-color: #F2F2F2;
+      color: #ffffff;
+      text-align: center;
+      font-size: 24px;
+      position: relative;
+    }
+    .wrap-upload > .upload-btn input {
+      width: 52px;
+      height: 52px;
+      right: 0;
+      top: 0;
+      opacity: 0;
+    }
+
+    .wrap-upload > .upload-title {
+      margin-left: 20px;
+      height: 52px;
+      line-height: 52px;
+      font-size: 13px;
+      text-align: left;
+      color: #333333;
+    }
+    .posts-wrap > .send-btn {
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      height: 42px;
+      line-height: 42px;
+      color: #ffffff;
+      font-size: 16px;
+      margin-top: 20px;
+      text-align: center;
+      border-radius: 5px;
+      background-color: #ff7f66;
+      position: relative;
+    }
+    .posts-wrap > .send-btn input {
+      width: 100%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <a href="javascript:history.go(-1)" class="header-back iconfont icon-arrow-left"></a>
+    <p class="header-title">发布帖子</p>
+  </header>
+  <div class="app-content">
+      <form action="" class="posts-wrap">
+        <div class="wrap-select">
+          <select name="">
+            <option>请选择服务类型</option>
+            <option value="芝士">芝士</option>
+            <option value="奶油">奶油</option>
+          </select>
+        </div>
+        <div class="wrap-title">
+          <input type="text" placeholder="请输入标题">
+        </div>
+        <div class="wrap-content">
+          <textarea name="" rows="13" placeholder="请输入内容"></textarea>
+        </div>
+        <div class="wrap-upload clearfix">
+          <p class="upload-btn iconfont icon-add pull-left">
+            <input type="file" id="file-input" name="image" accept="image/*">
+          </p>
+          <p class="upload-title pull-left">增加照片</p>
+        </div>
+        <p class="send-btn">发布
+          <input type="submit" value=""/>
+        </p>
+      </form>
+  </div>
+
+</body>
+</html>
