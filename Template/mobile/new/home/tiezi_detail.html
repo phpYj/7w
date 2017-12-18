@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="__STATIC__/app/css/reset.css">
+  <link rel="stylesheet" href="__STATIC__/app/fonts/iconfont.css">
+  <style>
+    .detail-voice {
+      width: 100%;
+      padding: 17px 20px 23px 20px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+    }
+    /* .detail-voice >.voice-head {
+      height: 14px;
+      line-height: 14px;
+    }
+    .detail-voice >.voice-head > .title {
+      font-size: 14px;
+      color: #333333;
+    }
+    .detail-voice > .voice-head > .date {
+      font-size: 13px;
+      color: #999999;
+    } */
+    .detail-voice > .voice-player {
+      width: 100%;
+      height: 90px;
+      /* margin-top: 19px; */
+      padding: 0 10px;
+      box-sizing: border-box;
+      background-color: #e5e5e5;
+      position: relative;
+    }
+    .detail-voice > .voice-player > .player-btn {
+      position: absolute;
+      left: 10px;
+      top: 20px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      background-color: #000000;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .detail-voice > .voice-player > .player-btn > .iconfont {
+      display: block;
+      font-size: 24px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .detail-voice > .voice-player > .progress-wrap {
+       margin-left: 70px;
+       padding-top: 44px;
+    }
+    .detail-voice > .voice-player > .progress-wrap > .player-progress {
+       height: 3px;
+       border-radius: 3px;
+       background-color: red;
+       position: relative;
+    }
+    .detail-voice > .voice-player > .progress-wrap > .player-progress > .speed {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 3px;
+      border-radius: 3px;
+      background-color: yellow;
+      z-index: 10;
+    }
+    .detail-voice > .voice-player > .progress-wrap > .player-progress > .drag {
+      position: absolute;
+      left: 0;
+      top: -5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: black;
+      z-index: 20;
+    }
+    .detail-voice > .voice-player > .progress-wrap > .player-timer {
+      margin-top: 5px;
+      font-size: 13px;
+      height: 13px;
+      margin-top: 7px;
+      line-height: 13px;
+      color: #333333;
+    }
+    .detail-voice > .exchange-wrap > .exchange-img {
+      width: 100%;
+      height: 184px;
+      margin-top: 18px;
+    }
+    .detail-voice > .exchange-wrap > .exchange-img > img {
+      width: 100%;
+      height: 184px;
+    }
+    .detail-voice > .exchange-wrap > .exchange-text {
+      /* margin-top: 34px; */
+      text-indent: 20px;
+      font-size: 13px;
+      line-height: 20px;
+    }
+    .detail-voice > .exchange-wrap > .exchange-number {
+      margin-top: 33px;
+      font-size: 13px;
+      height: 18px;
+      line-height: 18px;
+    }
+    .detail-voice > .exchange-wrap > .exchange-number .iconfont {
+      font-size: 16px;
+      margin-right: 10px;
+      color: #44e6ff;
+    }
+    .article-comment > .comment-item {
+      width: 100%;
+      padding: 19px 22px 0 22px;
+      box-sizing: border-box;
+      background: #FFFFFF;
+      border-top: 1px solid #d7d7d7;
+      position: relative;
+    }
+    .article-comment > .comment-item .item-img {
+      width: 50px;
+      height: 50px;
+    }
+    .article-comment > .comment-item .item-img > img {
+      width: 50px;
+      height: 50px;
+    }
+    .article-comment > .comment-item .item-name {
+      margin-top: 13px;
+      margin-left: 11px;
+      text-align: left;
+      color: #333333;
+    }
+    .article-comment > .comment-item .item-name > .name {
+      height:  12px;
+      font-size: 12px;
+      line-height: 12px;
+    }
+    .article-comment > .comment-item .item-name > .member {
+      margin-top: 8px;
+      height: 13px;
+      font-size: 13px;
+      line-height: 13px;
+    }
+    .article-comment > .comment-item .item-time {
+      position: absolute;
+      top: 32px;
+      right: 22px;
+      font-size: 13px;
+      height: 13px;
+      text-align: right;
+      color: #333333;
+    }
+    .article-comment > .comment-item .item-discuss {
+      margin-top: 37px;
+      font-size: 13px;
+      line-height: 13px;
+      text-align: left;
+      color: #333333;
+      padding-bottom: 17px;
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+     <a href="javascript:history.go(-1)" class="header-back iconfont icon-mjiantou-copy"></a>
+    <p class="header-title">{$data['title']}</p>
+  </header>
+  <div class="app-content">
+    <div class="detail-voice">
+      <!-- <p class="voice-head clearfix"><span class="title pull-left">课程:</span> -->
+        <!-- <span class="date pull-right">2017/12/02  8:56</span> -->
+      <!-- </p> -->
+      <!-- <div class="voice-player">
+        <div class="player-btn" id="playerBtn">
+          <span class="iconfont icon-shengyin"></span>
+          <audio id='audio' src="{$data['music']}" hidden="true"></audio>
+        </div>
+        <div class="progress-wrap">
+          <div class="player-progress" id="touchline">
+            <p class="speed" id="speed"></p>
+            <p class="drag" id="drag"></p>
+          </div>
+          <p class="player-timer clearfix">
+            <span class="start-time pull-left">00:00</span>
+            <span class="end-time pull-right">00:00</span>
+          </p>
+        </div>
+      </div> -->
+      <div class="exchange-wrap">
+          <h3 style="margin: 0% 12% 6%;">{$data['title']}</h3>
+          <p class="exchange-text">{$data['description']}</p>
+        <p class="exchange-img"><img src="{$data['picture']}"></p>
+        <div class="exchange-number clearfix">
+          <p class="pull-right"><span class="iconfont icon-xiaoxi"></span>8</p>
+        </div>
+      </div>
+    </div>
+    <div class="article-comment">
+      <div class="comment-item">
+        <div class="item-top clearfix">
+          <div class="item-img pull-left">
+            <img src="__STATIC__/app/img/article-head.jpg" />
+          </div>
+          <div class="item-name pull-left">
+            <p class="name">hello word</p>
+            <p class="member">至尊会员用户</p>
+          </div>
+          <p class="item-time">2小时以前</p>
+        </div>
+        <p class="item-discuss">Who Are Your Boss？</p>
+      </div>
+      <div class="comment-item">
+        <div class="item-top clearfix">
+          <div class="item-img pull-left">
+            <img src="__STATIC__/app/img/article-head.jpg" />
+          </div>
+          <div class="item-name pull-left">
+            <p class="name">hello word</p>
+            <p class="member">至尊会员用户</p>
+          </div>
+          <p class="item-time">2小时以前</p>
+        </div>
+        <p class="item-discuss">Who Are Your Boss？</p>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+  <script>
+    var audio = document.getElementById("audio")
+    $("#playerBtn").on('click',function(){
+      if(audio.paused){
+        Play();
+      } else {
+        Pause();
+      }
+    })
+    var isTouch = false;
+    var lineStart = $("#touchline").offset().left;
+    var lineWidth = $("#touchline").width();
+    //监听音频播放完毕事件
+    audio.addEventListener('ended', function () {
+      $("#drag").css("width", 0);
+      $(".start-time").html('00:00');
+    }, false)
+
+    function Play() {
+      audio.play();
+      TimeSpan();
+    } //Play()
+
+    function Pause() {
+      audio.pause();
+    } //Pause()
+
+    function TimeSpan() {
+      setInterval(function () {
+        var currentTime = audio.currentTime;
+        var timeAll = audio.duration;
+        var ProcessNow = (currentTime / timeAll) * 400;
+        $("#speed").css("width", ProcessNow);
+        $("#drag").css("left", ProcessNow);
+        var currentTimeFm = timeFormat(audio.currentTime);
+        var timeAllFm = timeFormat(TimeAll());
+        //触发条件停止循环，然后将时间和进度条初始化
+        if(currentTime >= timeAll){
+          $("#drag").css("width", 0);
+          $("#drag").css("left", 0);
+          $(".start-time").html('00:00');
+//          clearInterval(interval);
+        }
+        $(".start-time").html(currentTimeFm);
+        $(".end-time").html(timeAllFm);
+      }, 1000);
+    }  //TimeSpan()
+
+    function timeFormat(number) {
+      var minute = parseInt(number / 60);
+      var second = parseInt(number % 60);
+      minute = minute >= 10 ? minute : "0" + minute;
+      second = second >= 10 ? second : "0" + second;
+      return minute + ":" + second;
+    } //timeFormat()
+
+    function TimeAll() {
+      return audio.duration;
+    } //TimeAll()
+    //手势监听事件touchline
+    var drag = document.getElementById("#drag");
+    drag.addEventListener('touchstart', function(evt) {
+      if(audio.pause||audio.ended){
+        Play();
+      }
+      var touch=evt.touches[0];
+      var x=parseInt(touch.pageX);
+      if(x<lineStart){
+        x = lineStart;
+      }
+      var scale = (x - lineStart) / lineWidth;
+      audio.currentTime = scale * audio.duration;
+    }, false)
+  </script>
+</body>
+</html>

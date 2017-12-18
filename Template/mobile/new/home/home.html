@@ -263,7 +263,7 @@
 				<div class="bd">
 					<ul>
 						<adv pid ="51317" limit="5" item="v">
-							<li><a href="{$v.ad_link}" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="{$v[ad_code]}" title="{$v[title]}"width="100%" style="{$v[style]}"/></a></li>
+							<li><a href="{$v.ad_link}" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="{$v[ad_code]}" title="{$v[title]}"width="100%" style="{$v[style]}" /></a></li>
 						</adv> 
 					</ul>
 				</div>
@@ -340,7 +340,7 @@
 					<span class="kuaijie-close">X</span>
 				</div> -->
 				<div class="classroom clearfix">
-					<a href="##" class="room left-room pull-left">
+					<a href="{:U('Home/getTiezi')}" class="room left-room pull-left">
 						<span class="name">同病相怜</span></a>
 					<a href="{:U('Home/getHealthRoom')}" class="room left-room pull-right">
 						<span class="name">养生课堂</span></a>
