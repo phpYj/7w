@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>发布帖子</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-  <link rel="stylesheet" href="../Static/app/css/reset.css">
-  <link rel="stylesheet" href="../Static/app/fonts/iconfont.css">
+  <link rel="stylesheet" href="__STATIC__/app/css/reset.css">
+  <link rel="stylesheet" href="__STATIC__/app/fonts/iconfont.css">
   <style>
 
     body {
@@ -13,7 +13,7 @@
     }
     .posts-wrap {
       width: 100%;
-      padding: 20px 22px 22px 30px;
+      padding: 20px 22px 30px 22px;
       box-sizing: border-box;
       font-size: 13px;
     }
@@ -102,17 +102,15 @@
     .wrap-upload > .upload-btn {
       width: 52px;
       height: 52px;
-      line-height: 52px;
       border-radius: 5px;
-      background-color: #F2F2F2;
-      color: #ffffff;
-      text-align: center;
-      font-size: 24px;
+      background: #F2F2F2 url("__STATIC__/app/img/add.jpg") no-repeat center;
+      background-size: 52px 52px;
       position: relative;
     }
     .wrap-upload > .upload-btn input {
       width: 52px;
       height: 52px;
+      font-size: 200px;
       right: 0;
       top: 0;
       opacity: 0;
@@ -155,31 +153,35 @@
     <p class="header-title">发布帖子</p>
   </header>
   <div class="app-content">
-      <form action="" class="posts-wrap">
+      <form action="{:U('Home/forumPosts')}" class="posts-wrap" method="post" enctype="multipart/form-data">
         <div class="wrap-select">
-          <select name="">
-            <option>请选择服务类型</option>
-            <option value="芝士">芝士</option>
-            <option value="奶油">奶油</option>
+          <select name="cat_id" required >
+              <volist name="cat_select" id="v">
+                 <option value="{$v.cat_id}">{$v.cat_name}</option>
+              </volist>
           </select>
         </div>
         <div class="wrap-title">
-          <input type="text" placeholder="请输入标题">
+          <input type="text" required placeholder="请输入标题" name="title">
         </div>
         <div class="wrap-content">
-          <textarea name="" rows="13" placeholder="请输入内容"></textarea>
+          <textarea rows="13" required placeholder="请输入内容" name="description"></textarea>
         </div>
         <div class="wrap-upload clearfix">
-          <p class="upload-btn iconfont icon-add pull-left">
-            <input type="file" id="file-input" name="image" accept="image/*">
+          <p class="upload-btn pull-left">
+            <input type="file" id="file-input" required name="picture" accept="image/*">
           </p>
           <p class="upload-title pull-left">增加照片</p>
         </div>
-        <p class="send-btn">发布
-          <input type="submit" value=""/>
+        <p class="send-btn" onclick="submitForm()">发布
+          <input type="submit" value="" id="form_submit"/>
         </p>
       </form>
   </div>
-
 </body>
+<script>
+  function submitForm() {
+    document.getElementById('form_submit').click();
+  }
+</script>
 </html>
