@@ -103,7 +103,10 @@
       width: 52px;
       height: 52px;
       border-radius: 5px;
-      background: #F2F2F2 url("__STATIC__/app/img/add.jpg") no-repeat center;
+      background-color: #F2F2F2;
+      background-image: url("__STATIC__/app/img/add.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
       background-size: 52px 52px;
       position: relative;
     }
@@ -179,9 +182,24 @@
       </form>
   </div>
 </body>
+<script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
 <script>
   function submitForm() {
     document.getElementById('form_submit').click();
   }
+  $("#fileInput").on("change", function (e) {
+    for (var i = 0; i < e.target.files.length; i++) {
+      var file = e.target.files.item(i);
+      var freader = new FileReader();
+      freader.readAsDataURL(file);
+      freader.onload = function(e) {
+        var src = e.target.result;
+        $("#upload_img").css("background-image", "url(" + src + ")");
+      }
+      freader.onerror = function(e) {
+        $("#upload_img").css("background-image", "url(__STATIC__/app/img/add.jpg)");
+      }
+    }
+  })
 </script>
 </html>
